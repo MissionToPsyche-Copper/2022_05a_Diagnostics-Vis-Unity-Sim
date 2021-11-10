@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Macor Sleeves
+  - Macor Washers
+  - Stainless Steel Body
   layers:
   - Default
   - TransparentFX
