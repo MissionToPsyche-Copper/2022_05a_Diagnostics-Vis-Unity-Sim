@@ -7,6 +7,11 @@ TagManager:
   - Macor Sleeves
   - Macor Washers
   - Stainless Steel Body
+  - Floating Grid
+  - Electric Repulsion Grid
+  - Ion Retarding Grid
+  - Electron Suppression Grid
+  - Collector
   layers:
   - Default
   - TransparentFX
