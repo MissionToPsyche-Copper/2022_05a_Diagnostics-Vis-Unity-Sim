@@ -12,6 +12,11 @@ TagManager:
   - Ion Retarding Grid
   - Electron Suppression Grid
   - Collector
+  - South Magnet
+  - North Magnet
+  - Insulator
+  - Anode
+  - Cathode
   layers:
   - Default
   - TransparentFX
