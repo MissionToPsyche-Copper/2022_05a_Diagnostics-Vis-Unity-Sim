@@ -20,7 +20,7 @@ public class MultipleElementHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        siblings = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
     }
 
     private void OnMouseOver()

@@ -17,6 +17,8 @@ TagManager:
   - Insulator
   - Anode
   - Cathode
+  - Xenon
+  - PopUpText
   layers:
   - Default
   - TransparentFX
@@ -24,8 +26,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Xenon
+  - RPA
   - 
   - 
   - 
