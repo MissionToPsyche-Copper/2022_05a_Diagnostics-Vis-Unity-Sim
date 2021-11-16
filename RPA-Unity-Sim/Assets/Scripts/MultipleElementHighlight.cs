@@ -31,6 +31,11 @@ public class MultipleElementHighlight : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter()
+    {
+
+    }
+
     private void OnMouseExit()
     {
         for (int i = 0; i < siblings.Length; i++)
@@ -47,5 +52,10 @@ public class MultipleElementHighlight : MonoBehaviour
     public void DisableOutline()
     {
         meshRenderer.material.color = StartingColor;
+    }
+
+    public void UpdateColor()
+    {
+        StartingColor = meshRenderer.material.color;
     }
 }

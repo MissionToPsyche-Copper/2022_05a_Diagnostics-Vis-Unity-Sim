@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class XenonSpawn : MonoBehaviour
+public class ElectronSpawn : MonoBehaviour
 {
-    public GameObject XenonPrefab;
+    public GameObject ElectronPrefab;
 
     float time = 0f;
 
@@ -19,9 +19,9 @@ public class XenonSpawn : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time >= 0.25f)
+        if (time >= 0.1f)
         {
-            Instantiate(XenonPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
+            Instantiate(ElectronPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
             time = 0f;
         }
     }

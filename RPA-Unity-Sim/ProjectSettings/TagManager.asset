@@ -19,6 +19,10 @@ TagManager:
   - Cathode
   - Xenon
   - PopUpText
+  - HETCenter
+  - Electron
+  - RPACenter
+  - ChargedXenon
   layers:
   - Default
   - TransparentFX
@@ -28,10 +32,10 @@ TagManager:
   - UI
   - Xenon
   - RPA
-  - 
-  - 
-  - 
-  - 
+  - Electron
+  - ChargedXenon
+  - HET
+  - BoundingBox
   - 
   - 
   - 
