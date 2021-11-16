@@ -20,7 +20,7 @@ public class MultipleElementHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        siblings = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
     }
 
     private void OnMouseOver()
@@ -29,6 +29,11 @@ public class MultipleElementHighlight : MonoBehaviour
         {
             siblings[i].GetComponent<MultipleElementHighlight>().EnableOutline();
         }
+    }
+
+    private void OnMouseEnter()
+    {
+
     }
 
     private void OnMouseExit()
@@ -47,5 +52,10 @@ public class MultipleElementHighlight : MonoBehaviour
     public void DisableOutline()
     {
         meshRenderer.material.color = StartingColor;
+    }
+
+    public void UpdateColor()
+    {
+        StartingColor = meshRenderer.material.color;
     }
 }

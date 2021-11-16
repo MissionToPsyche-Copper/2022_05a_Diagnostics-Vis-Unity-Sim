@@ -10,7 +10,7 @@ public class PopUpText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        textBox = GameObject.FindGameObjectWithTag("PopUpText").GetComponent<Text>();
     }
 
     // Update is called once per frame

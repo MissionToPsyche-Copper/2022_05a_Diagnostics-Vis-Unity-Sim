@@ -17,6 +17,12 @@ TagManager:
   - Insulator
   - Anode
   - Cathode
+  - Xenon
+  - PopUpText
+  - HETCenter
+  - Electron
+  - RPACenter
+  - ChargedXenon
   layers:
   - Default
   - TransparentFX
@@ -24,12 +30,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Xenon
+  - RPA
+  - Electron
+  - ChargedXenon
+  - HET
+  - BoundingBox
   - 
   - 
   - 
