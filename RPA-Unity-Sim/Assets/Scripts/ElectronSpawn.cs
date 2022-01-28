@@ -19,7 +19,7 @@ public class ElectronSpawn : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= 0.1f)
+        if (time >= 0.08f)
         {
             Instantiate(ElectronPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
             time = 0f;

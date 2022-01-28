@@ -23,6 +23,7 @@ TagManager:
   - Electron
   - RPACenter
   - ChargedXenon
+  - ElectronTarget
   layers:
   - Default
   - TransparentFX
@@ -36,11 +37,11 @@ TagManager:
   - ChargedXenon
   - HET
   - BoundingBox
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FloatingGrid
+  - ElectronRepulsion
+  - IonRepulsion
+  - ElectronSuppression
+  - Collector
   - 
   - 
   - 
