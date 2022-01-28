@@ -31,8 +31,8 @@ public class Xenon : MonoBehaviour
     {
         if (hasElectron)
         {
-            float step = 1.1f * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(this.transform.position, RPACenter.transform.position, step);
+            //float step = 1.5f * Time.deltaTime;
+            //transform.position = Vector3.MoveTowards(this.transform.position, RPACenter.transform.position, step);
         }
     }
 
@@ -59,10 +59,21 @@ public class Xenon : MonoBehaviour
 
             this.GetComponent<MultipleElementHighlight>().UpdateColor();
 
-            GetComponent<Rigidbody>().AddForce((new Vector3(0, RPACenter.transform.position.y) - new Vector3(0, this.transform.position.y)) * 44f);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+            int positionRange = Random.Range((int)RPACenter.transform.position.y - 4, (int)RPACenter.transform.position.y + 4);
+
+            GetComponent<Rigidbody>().AddForce((new Vector3(RPACenter.transform.position.x, positionRange) - new Vector3(this.transform.position.x, this.transform.position.y)) * 8f);
         }
 
+        if(collision.gameObject.layer == 14 && !hasElectron)
+            Destroy(this.gameObject);
+
         if (collision.gameObject.layer == 11)
+            Destroy(this.gameObject);
+
+        // made it to collector
+        if (collision.gameObject.layer == 16)
             Destroy(this.gameObject);
     }
 }

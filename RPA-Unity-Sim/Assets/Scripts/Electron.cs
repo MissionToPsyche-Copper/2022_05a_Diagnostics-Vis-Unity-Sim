@@ -14,7 +14,7 @@ public class Electron : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CirclePosition = GameObject.FindGameObjectWithTag("HETCenter");
+        CirclePosition = GameObject.FindGameObjectWithTag("ElectronTarget");
 
         speed = Random.Range(150f, 200f);
 
