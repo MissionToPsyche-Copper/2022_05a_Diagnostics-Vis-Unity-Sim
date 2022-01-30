@@ -24,6 +24,7 @@ TagManager:
   - RPACenter
   - ChargedXenon
   - ElectronTarget
+  - Electron Repulsion Grid
   layers:
   - Default
   - TransparentFX
