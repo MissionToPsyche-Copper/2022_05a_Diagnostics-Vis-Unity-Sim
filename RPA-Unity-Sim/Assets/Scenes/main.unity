@@ -2873,6 +2873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 963194227}
   zoomButton: {fileID: 2125227334}
+  diagnostic: {fileID: 275825057}
 --- !u!1 &486509454
 GameObject:
   m_ObjectHideFlags: 0
