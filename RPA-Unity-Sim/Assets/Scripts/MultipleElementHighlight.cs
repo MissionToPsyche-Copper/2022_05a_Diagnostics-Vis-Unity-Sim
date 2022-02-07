@@ -21,13 +21,17 @@ public class MultipleElementHighlight : MonoBehaviour
     void Update()
     {
         siblings = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        
     }
 
     private void OnMouseOver()
     {
         for(int i = 0; i < siblings.Length; i++)
         {
-            siblings[i].GetComponent<MultipleElementHighlight>().EnableOutline();
+            if (siblings[i] != null)
+            {
+                siblings[i].GetComponent<MultipleElementHighlight>().EnableOutline();
+            }
         }
     }
 
@@ -40,7 +44,10 @@ public class MultipleElementHighlight : MonoBehaviour
     {
         for (int i = 0; i < siblings.Length; i++)
         {
-            siblings[i].GetComponent<MultipleElementHighlight>().DisableOutline();
+            if (siblings[i] != null)
+            {
+                siblings[i].GetComponent<MultipleElementHighlight>().DisableOutline();
+            }
         }
     }
 
