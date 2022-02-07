@@ -10,13 +10,18 @@ public class Xenon : MonoBehaviour
 
     float speed;
 
-    bool hasElectron = false;
+    bool isCharged = false;
 
     MeshRenderer meshRenderer;
+
+    float timeSpawned;
+    float timeAllowed = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
+        timeSpawned = Time.time;
+
         RPACenter = GameObject.FindGameObjectWithTag("RPACenter");
         meshRenderer = this.GetComponent<MeshRenderer>();
 
@@ -29,10 +34,18 @@ public class Xenon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasElectron)
+        if (isCharged)
         {
-            //float step = 1.5f * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(this.transform.position, RPACenter.transform.position, step);
+            float step = 0.75f * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(this.transform.position, RPACenter.transform.position, step);
+        }
+        else
+        {
+            // destroy if not charged and alive for too long
+            if (Time.deltaTime > (timeSpawned + timeAllowed))
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -48,11 +61,10 @@ public class Xenon : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (collision.transform.tag == "Electron" && !hasElectron)
+        if (collision.transform.tag == "Electron" && !isCharged)
         {
-            Debug.Log("Xenon touching Electron");
             meshRenderer.material.color = Color.magenta;
-            hasElectron = true;
+            isCharged = true;
 
             this.gameObject.layer = 9;
             this.gameObject.tag = "ChargedXenon";
@@ -63,10 +75,10 @@ public class Xenon : MonoBehaviour
 
             int positionRange = Random.Range((int)RPACenter.transform.position.y - 4, (int)RPACenter.transform.position.y + 4);
 
-            GetComponent<Rigidbody>().AddForce((new Vector3(RPACenter.transform.position.x, positionRange) - new Vector3(this.transform.position.x, this.transform.position.y)) * 8f);
+            GetComponent<Rigidbody>().AddForce((new Vector3(RPACenter.transform.position.x, positionRange) - new Vector3(this.transform.position.x, this.transform.position.y)) * 8.8f);
         }
 
-        if(collision.gameObject.layer == 14 && !hasElectron)
+        if(collision.gameObject.layer == 14 && !isCharged)
             Destroy(this.gameObject);
 
         if (collision.gameObject.layer == 11)

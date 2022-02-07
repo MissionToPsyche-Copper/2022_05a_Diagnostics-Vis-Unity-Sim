@@ -25,6 +25,7 @@ TagManager:
   - ChargedXenon
   - ElectronTarget
   - Electron Repulsion Grid
+  - RPA Entrance Trigger
   layers:
   - Default
   - TransparentFX
@@ -43,7 +44,7 @@ TagManager:
   - IonRepulsion
   - ElectronSuppression
   - Collector
-  - 
+  - EntranceTrigger
   - 
   - 
   - 

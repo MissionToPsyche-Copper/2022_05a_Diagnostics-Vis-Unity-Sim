@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Electron : MonoBehaviour
 {
+    public GameObject ThrownElectronPrefab;
+
     GameObject CirclePosition;
-    public GameObject OrbitCenter;
 
     float speed;
-
-    bool Orbitting = false;
+    float timeLeftAlive = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +19,15 @@ public class Electron : MonoBehaviour
         speed = Random.Range(150f, 200f);
 
         GetComponent<Rigidbody>().AddForce(new Vector3(1, 0).normalized * speed);
+
+        Destroy(this.gameObject, 4f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!Orbitting)
-        {
-            float step = 4.4f * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(this.transform.position, CirclePosition.transform.position, step);
-        }
-        else
-        {
-            transform.RotateAround(OrbitCenter.transform.position, OrbitCenter.transform.forward, 10f * Time.deltaTime);
-        }
+        float step = 4.4f * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(this.transform.position, CirclePosition.transform.position, step);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,13 +42,14 @@ public class Electron : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (collision.transform.tag == "Xenon" && !OrbitCenter)
+        if (collision.transform.tag == "Xenon")
         {
             //OrbitCenter = collision.gameObject;
             //Orbitting = true;
 
             //this.gameObject.transform.SetParent(collision.transform);
-            Destroy(this.gameObject);
+            Instantiate(ThrownElectronPrefab, this.transform.position, this.transform.rotation);
+            Destroy(this.gameObject, 2f);
         }
 
         if(collision.gameObject.layer == 11)

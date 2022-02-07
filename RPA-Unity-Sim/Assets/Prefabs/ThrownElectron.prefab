@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 9185900283966284765}
   - component: {fileID: -6872759623335944189}
   - component: {fileID: -608432183255350516}
-  - component: {fileID: 9185900283966284764}
+  - component: {fileID: -4050447677563841224}
   - component: {fileID: 7920807905985154984}
   - component: {fileID: 6430139084594764359}
   m_Layer: 8
-  m_Name: Electron
+  m_Name: ThrownElectron
   m_TagString: Electron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9185900283966284767}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e85ec0be8a7521b459433c053b2883f1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -133,7 +133,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9185900283966284764
+--- !u!114 &-4050447677563841224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,10 +142,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9185900283966284767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e941a22acb00144ae47996970a01ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 84182f5432a683940b74209f410ebd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrownElectronPrefab: {fileID: 9185900283966284767, guid: cddd307c47cc1a64cac68a1a27d8526d, type: 3}
+  outsideRPA: 1
 --- !u!114 &7920807905985154984
 MonoBehaviour:
   m_ObjectHideFlags: 0
