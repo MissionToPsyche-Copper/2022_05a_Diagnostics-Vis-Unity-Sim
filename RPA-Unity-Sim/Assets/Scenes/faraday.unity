@@ -1743,6 +1743,7 @@ MonoBehaviour:
   main: {fileID: 963194227}
   zoomButton: {fileID: 2042338851}
   diagnostic: {fileID: 318541257}
+  defaultZoomHeight: 15
 --- !u!114 &482212015
 MonoBehaviour:
   m_ObjectHideFlags: 0

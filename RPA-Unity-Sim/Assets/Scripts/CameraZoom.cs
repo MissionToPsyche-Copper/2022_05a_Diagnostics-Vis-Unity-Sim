@@ -9,12 +9,13 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private Camera main;
     [SerializeField] private Text zoomButton;
     [SerializeField] private GameObject diagnostic;
+    [SerializeField] private float defaultZoomHeight = 10;
     public void Zoom()
     {
         if(zoom) // zoomed in, so un zoom
         {
             main.transform.position = new Vector3(1.5f, 0, -10f);
-            main.orthographicSize = 10;
+            main.orthographicSize = defaultZoomHeight;
             zoom = false;
             zoomButton.text = "Zoom In";
         }
