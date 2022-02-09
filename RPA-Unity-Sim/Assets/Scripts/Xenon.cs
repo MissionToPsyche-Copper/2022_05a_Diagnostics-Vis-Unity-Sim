@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Xenon : MonoBehaviour
 {
@@ -17,9 +18,21 @@ public class Xenon : MonoBehaviour
     float timeSpawned;
     float timeAllowed = 2f;
 
+    public IonRetardingGrid IRG;
+    // Functions to find critical velocity
+    public float ionMass = 131.293f; // atomic units
+    public float ionCharge = 0; // starts uncharged
+    public float elementaryCharge = 12.1299f;
+    public float velocity; // ionization enery? unknown
+
     // Start is called before the first frame update
     void Start()
     {
+        if(SceneManager.GetActiveScene().name == "rpa")
+        {
+            IRG = GameObject.FindGameObjectWithTag("Ion Retarding Grid").GetComponent<IonRetardingGrid>();
+        }
+        
         timeSpawned = Time.time;
 
         RPACenter = GameObject.FindGameObjectWithTag("RPACenter");
@@ -51,7 +64,19 @@ public class Xenon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        // Ion Repulsion Grid
+        if(other.gameObject.layer == 14)
+        {
+            if(IRG.PassCheck(ionCharge, ionMass, elementaryCharge, velocity))
+            {
+                this.gameObject.layer = 19;
+            }
+            else
+            {
+                Debug.Log("Failed check");
+            }
+            Destroy(this.gameObject, 3f);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -64,8 +89,13 @@ public class Xenon : MonoBehaviour
         if (collision.transform.tag == "Electron" && !isCharged)
         {
             meshRenderer.material.color = Color.magenta;
-            isCharged = true;
 
+            // Charge Xenon, get velocity for critical check in device
+            isCharged = true;
+            ionCharge = 1;
+            velocity = Random.Range(0f, 1.5f);
+
+            // Change Type
             this.gameObject.layer = 9;
             this.gameObject.tag = "ChargedXenon";
 
@@ -79,7 +109,7 @@ public class Xenon : MonoBehaviour
         }
 
         if(collision.gameObject.layer == 14 && !isCharged)
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // actually should bounce away
 
         if (collision.gameObject.layer == 11)
             Destroy(this.gameObject);
@@ -87,5 +117,10 @@ public class Xenon : MonoBehaviour
         // made it to collector
         if (collision.gameObject.layer == 16)
             Destroy(this.gameObject);
+
+        if(collision.gameObject.layer == 14)
+        {
+            Debug.Log("HIT IRA!");
+        }
     }
 }

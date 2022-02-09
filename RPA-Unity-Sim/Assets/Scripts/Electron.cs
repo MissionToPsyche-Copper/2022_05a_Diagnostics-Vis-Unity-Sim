@@ -6,7 +6,10 @@ public class Electron : MonoBehaviour
 {
     public GameObject ThrownElectronPrefab;
 
-    GameObject CirclePosition;
+    public GameObject[] electronTargets;
+    public GameObject TargetPosition;
+
+    public int random;
 
     float speed;
     float timeLeftAlive = 5f;
@@ -14,7 +17,10 @@ public class Electron : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CirclePosition = GameObject.FindGameObjectWithTag("ElectronTarget");
+        
+        electronTargets = GameObject.FindGameObjectsWithTag("ElectronTarget");
+        random = Random.Range(0, electronTargets.Length);
+        TargetPosition = electronTargets[random];
 
         speed = Random.Range(150f, 200f);
 
@@ -27,7 +33,7 @@ public class Electron : MonoBehaviour
     void Update()
     {
         float step = 4.4f * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(this.transform.position, CirclePosition.transform.position, step);
+        transform.position = Vector3.MoveTowards(this.transform.position, TargetPosition.transform.position, step);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -51,11 +51,6 @@ public class ThrownElectron : MonoBehaviour
 
         if (collision.gameObject.layer == 11)
             Destroy(this.gameObject);
-
-        if(collision.gameObject.layer == 13)
-        {
-            Debug.Log("HIT!");
-        }
     }
 
     private void OnTriggerEnter(Collider other)
