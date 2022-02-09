@@ -28,4 +28,13 @@ public class CameraZoom : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if(zoom)
+        {
+            Vector3 camPos = main.transform.position;
+            main.transform.Translate(diagnostic.transform.position - new Vector3(camPos.x, camPos.y, 0));
+        }
+    }
+
 }
