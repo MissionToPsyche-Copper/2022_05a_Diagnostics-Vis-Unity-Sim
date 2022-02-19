@@ -5261,7 +5261,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 482212015}
         m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
         m_MethodName: UpdateSpeed
         m_Mode: 1
