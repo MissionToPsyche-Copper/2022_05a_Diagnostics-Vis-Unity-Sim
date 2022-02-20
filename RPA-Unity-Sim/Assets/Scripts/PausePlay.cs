@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PausePlay : MonoBehaviour
 {
+    // Used to hide/show slider when game is paused
+    // https://stackoverflow.com/a/36611745
+    GameObject timeSlider;
+    GameObject timeText;
 
     public bool running = true;
     public Text PauseButtonText;
@@ -12,7 +16,8 @@ public class PausePlay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timeSlider = GameObject.Find("TimeSlider");
+        timeText = GameObject.Find("TimeText");
     }
 
     // Update is called once per frame
@@ -38,6 +43,8 @@ public class PausePlay : MonoBehaviour
         running = false;
         Time.timeScale = 0;
         PauseButtonText.text = "Play";
+        timeSlider.SetActive(false);
+        timeText.SetActive(false);
     }
 
     void PlaySim()
@@ -45,5 +52,7 @@ public class PausePlay : MonoBehaviour
         running = true;
         Time.timeScale = 1;
         PauseButtonText.text = "Pause";
+        timeSlider.SetActive(true);
+        timeText.SetActive(true);
     }
 }
