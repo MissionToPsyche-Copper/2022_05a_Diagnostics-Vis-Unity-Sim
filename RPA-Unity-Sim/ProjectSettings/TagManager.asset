@@ -29,6 +29,9 @@ TagManager:
   - Guard
   - Stainless Steel Bolt
   - Macor Insulating Sleeve
+  - Faraday Center Trigger
+  - Captured Electron
+  - ESG Entrance
   layers:
   - Default
   - TransparentFX
@@ -37,7 +40,7 @@ TagManager:
   - Water
   - UI
   - Xenon
-  - RPA
+  - Outer RPA
   - Electron
   - ChargedXenon
   - HET
@@ -50,11 +53,11 @@ TagManager:
   - EntranceTrigger
   - XenonRepel
   - CriticalXenon
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CenterTrigger
+  - Outer Faraday
+  - Faraday Collector
+  - Captured Electron
+  - ESGEntrance
   - 
   - 
   - 
