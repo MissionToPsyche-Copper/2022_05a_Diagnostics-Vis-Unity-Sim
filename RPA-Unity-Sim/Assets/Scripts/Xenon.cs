@@ -82,7 +82,7 @@ public class Xenon : MonoBehaviour
         if(other.gameObject.layer == 20)
         {
             isCharged = false;
-            Destroy(this.gameObject, 5f);
+            Destroy(this.gameObject, 8f);
         }
     }
 
