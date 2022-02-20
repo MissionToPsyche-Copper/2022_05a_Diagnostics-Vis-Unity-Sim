@@ -26,6 +26,9 @@ TagManager:
   - ElectronTarget
   - Electron Repulsion Grid
   - RPA Entrance Trigger
+  - Guard
+  - Stainless Steel Bolt
+  - Macor Insulating Sleeve
   layers:
   - Default
   - TransparentFX
