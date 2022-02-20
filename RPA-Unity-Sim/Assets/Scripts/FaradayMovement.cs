@@ -33,7 +33,7 @@ public class FaradayMovement : MonoBehaviour
         bool localrot = true;
         while (localrot)
         {
-            this.transform.Rotate(Vector3.forward * Time.deltaTime * 10f);
+            this.transform.Rotate(Vector3.forward * Time.deltaTime * 7.5f);
             yield return null;
             if(this.transform.eulerAngles.z > 33 && this.transform.eulerAngles.z < 180)
             {
@@ -44,7 +44,7 @@ public class FaradayMovement : MonoBehaviour
         localrot = true;
         while (localrot)
         {
-            this.transform.Rotate(Vector3.back * Time.deltaTime * 10f);
+            this.transform.Rotate(Vector3.back * Time.deltaTime * 7.5f);
             yield return null;
             if (this.transform.eulerAngles.z < 327 && this.transform.eulerAngles.z > 180)
             {
