@@ -50,15 +50,25 @@ public class Electron : MonoBehaviour
 
         if (collision.transform.tag == "Xenon")
         {
-            //OrbitCenter = collision.gameObject;
-            //Orbitting = true;
-
-            //this.gameObject.transform.SetParent(collision.transform);
             Instantiate(ThrownElectronPrefab, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject, 2f);
         }
 
-        if(collision.gameObject.layer == 11)
+        // boundaries
+        if (collision.gameObject.layer == 11)
             Destroy(this.gameObject);
+
+
+        // outer faraday device
+        if (collision.gameObject.layer == 21)
+        {
+            Destroy(this.gameObject);
+        }
+
+        // faraday collector 
+        if (collision.gameObject.layer == 22)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

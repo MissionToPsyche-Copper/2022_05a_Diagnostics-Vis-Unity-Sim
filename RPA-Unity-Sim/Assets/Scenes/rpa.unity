@@ -785,6 +785,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   siblings: []
+--- !u!1 &131447329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131447330}
+  - component: {fileID: 131447331}
+  m_Layer: 24
+  m_Name: Electron Suppression Grid Entrance
+  m_TagString: ESG Entrance
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131447330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131447329}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.95, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 275825058}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &131447331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131447329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &140489348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1398,7 @@ Transform:
   - {fileID: 1273659176}
   - {fileID: 1604565903}
   - {fileID: 325896503}
+  - {fileID: 131447330}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2059,6 +2104,7 @@ GameObject:
   - component: {fileID: 435633243}
   - component: {fileID: 435633247}
   - component: {fileID: 435633246}
+  - component: {fileID: 435633248}
   m_Layer: 15
   m_Name: ElectronSuppression
   m_TagString: Electron Suppression Grid
@@ -2088,7 +2134,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435633241}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2167,6 +2213,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7482ad3ae264e8441ae711c8a67d57c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &435633248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435633241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264d72ef4cc5c7c4c827c2bacee83c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CaughtElectrons: []
 --- !u!1 &438726053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,7 +2486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 963194227}
   zoomButton: {fileID: 2125227334}
-  diagnostic: {fileID: 275825057}
+  diagnostic: {fileID: 1758730642}
   defaultZoomHeight: 10
 --- !u!114 &482212015
 MonoBehaviour:

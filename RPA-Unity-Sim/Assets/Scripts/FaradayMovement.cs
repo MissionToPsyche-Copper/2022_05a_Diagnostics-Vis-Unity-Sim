@@ -19,7 +19,7 @@ public class FaradayMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!rotating)
         {
@@ -28,14 +28,8 @@ public class FaradayMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     IEnumerator RotateAnim()
     {
-        Debug.Log("HERE!");
         bool localrot = true;
         while (localrot)
         {

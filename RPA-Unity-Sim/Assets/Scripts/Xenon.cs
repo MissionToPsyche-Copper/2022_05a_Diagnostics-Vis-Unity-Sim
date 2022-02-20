@@ -73,15 +73,35 @@ public class Xenon : MonoBehaviour
             }
             else
             {
-                Debug.Log("Failed check");
+                //Debug.Log("Failed check");
             }
             Destroy(this.gameObject, 3f);
+        }
+
+        //Faraday Center Trigger
+        if(other.gameObject.layer == 20)
+        {
+            isCharged = false;
+            Destroy(this.gameObject, 5f);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        // outer RPA device
         if(collision.gameObject.layer == 7)
+        {
+            Destroy(this.gameObject);
+        }
+
+        // outer faraday device
+        if (collision.gameObject.layer == 21)
+        {
+            Destroy(this.gameObject);
+        }
+
+        // faraday collector 
+        if (collision.gameObject.layer == 22)
         {
             Destroy(this.gameObject);
         }
@@ -111,6 +131,7 @@ public class Xenon : MonoBehaviour
         if(collision.gameObject.layer == 14 && !isCharged)
             Destroy(this.gameObject); // actually should bounce away
 
+        // boundaries
         if (collision.gameObject.layer == 11)
             Destroy(this.gameObject);
 
