@@ -137,7 +137,11 @@ public class Xenon : MonoBehaviour
 
         // made it to collector
         if (collision.gameObject.layer == 16)
+        {
+            collision.gameObject.GetComponent<RPACollector>().RepelElectron();
             Destroy(this.gameObject);
+        }
+            
 
         if(collision.gameObject.layer == 14)
         {
