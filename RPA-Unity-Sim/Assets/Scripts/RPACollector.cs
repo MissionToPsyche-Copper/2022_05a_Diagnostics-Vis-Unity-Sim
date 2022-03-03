@@ -23,7 +23,7 @@ public class RPACollector : MonoBehaviour
     {
         // Chance to Repell an electron
         int randomChance = Random.Range(0, 101);
-        if (randomChance > 66)
+        if (randomChance > 50)
         {
             int randomSpawnLocation = Random.Range(0, 3);
             Instantiate(RepelledElectronPrefab, RepelledElectronSpawns[randomSpawnLocation].transform.position, Quaternion.Euler(Vector3.zero));
