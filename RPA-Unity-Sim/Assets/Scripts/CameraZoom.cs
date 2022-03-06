@@ -17,14 +17,14 @@ public class CameraZoom : MonoBehaviour
             main.transform.position = new Vector3(1.5f, 0, -10f);
             main.orthographicSize = defaultZoomHeight;
             zoom = false;
-            zoomButton.text = "Zoom In";
+            zoomButton.text = "Focus on Device";
         }
         else // un zoomed, so zoom in
         {
             main.transform.Translate(diagnostic.transform.position - new Vector3(0, 0, 0));
             main.orthographicSize = 3;
             zoom = true;
-            zoomButton.text = "Zoom Out";
+            zoomButton.text = "Unfocus";
         }
     }
 

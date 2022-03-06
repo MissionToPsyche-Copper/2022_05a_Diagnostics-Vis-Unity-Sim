@@ -51,6 +51,28 @@ public class MultipleElementHighlight : MonoBehaviour
         }
     }
 
+    public void EnableAll()
+    {
+        for (int i = 0; i < siblings.Length; i++)
+        {
+            if (siblings[i] != null)
+            {
+                siblings[i].GetComponent<MultipleElementHighlight>().EnableOutline();
+            }
+        }
+    }
+
+    public void DisableAll()
+    {
+        for (int i = 0; i < siblings.Length; i++)
+        {
+            if (siblings[i] != null)
+            {
+                siblings[i].GetComponent<MultipleElementHighlight>().DisableOutline();
+            }
+        }
+    }
+
     public void EnableOutline()
     {
         meshRenderer.material.color = Color.yellow;

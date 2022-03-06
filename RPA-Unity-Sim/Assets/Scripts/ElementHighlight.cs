@@ -30,4 +30,14 @@ public class ElementHighlight : MonoBehaviour
     {
         meshRenderer.material.color = StartingColor;
     }
+
+    public void EnableOutline()
+    {
+        meshRenderer.material.color = Color.yellow;
+    }
+
+    public void DisableOutline()
+    {
+        meshRenderer.material.color = StartingColor;
+    }
 }

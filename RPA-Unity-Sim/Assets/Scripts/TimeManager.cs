@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     public string SpeedText;
     public Slider TimeSlider;
 
-    public float timeSpeed = 1;
+    public float timeSpeed = 0.75f;
 
 
     // Start is called before the first frame update
