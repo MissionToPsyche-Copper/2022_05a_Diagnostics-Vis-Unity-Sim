@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class RPATutorialManager : MonoBehaviour
 {
     public PausePlay PausePlayController;
+    public Camera MainCamera;
     // UI interactables
     public Button pauseButton;
     public Button zoomButton;
 
     // timer
     public float timer = 0;
+
+    // Camera Positions
+    public Vector3 mainPosition;
+    public Vector3 zoomPosition;
 
     // UI tutorial panels and variables
     [Header("Panel 1")]
@@ -63,6 +68,9 @@ public class RPATutorialManager : MonoBehaviour
         PausePlayController.ToggleSimulationPlay();
         pauseButton.interactable = false;
         zoomButton.interactable = false;
+
+        mainPosition = MainCamera.transform.position;
+        zoomPosition = new Vector3(15, 1.75f, -10);
     }
 
     // Update is called once per frame
@@ -191,6 +199,7 @@ public class RPATutorialManager : MonoBehaviour
         RPAOutline.DisableAll();
     }
 
+    // Transition to RPA Zoom with 4th Panel
     public void ContinueThirdPanel()
     {
         // disable 3
@@ -204,6 +213,10 @@ public class RPATutorialManager : MonoBehaviour
         // enable time
         PausePlayController.ToggleSimulationPlay();
         Time.timeScale = 0.75f;
+
+        // Move Camera to RPA
+        MainCamera.transform.position = zoomPosition;
+        MainCamera.orthographicSize = 7;
     }
 
     // Fourth Tutorial Panel
@@ -216,6 +229,8 @@ public class RPATutorialManager : MonoBehaviour
         // enable 5
         runPanel5Blink = true;
         TutorialPanel5.SetActive(true);
+
+        
     }
 
     IEnumerator Panel4BlinkAnim()
@@ -293,6 +308,10 @@ public class RPATutorialManager : MonoBehaviour
         TutorialPanel7.SetActive(false);
 
         DisableTutorialLocks();
+
+        // Move Camera Back to Main Position
+        MainCamera.transform.position = mainPosition;
+        MainCamera.orthographicSize = 10;
     }
 
     IEnumerator Panel7BlinkAnim()
