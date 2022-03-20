@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class FaradayTutorialManager : MonoBehaviour
 {
+    private bool isZoom = false;
+
     public PausePlay PausePlayController;
     public Camera MainCamera;
     // UI interactables
@@ -50,7 +52,7 @@ public class FaradayTutorialManager : MonoBehaviour
         zoomButton.interactable = false;
 
         mainPosition = MainCamera.transform.position;
-        zoomPosition = new Vector3(15, 1.75f, -10); // might need to be adjusted
+        zoomPosition = new Vector3(1.5f, 0, -10f); // get this to follow the Faraday Probe?
     }
 
     // Update is called once per frame
@@ -176,9 +178,10 @@ public class FaradayTutorialManager : MonoBehaviour
         PausePlayController.ToggleSimulationPlay();
         Time.timeScale = 0.75f;
 
-        // Move Camera to RPA
+        // Move Camera to Faraday Probe
         MainCamera.transform.position = zoomPosition;
-        MainCamera.orthographicSize = 7;
+        MainCamera.orthographicSize = 3;
+        isZoom = true;
     }
 
     // Fourth Tutorial Panel
@@ -212,6 +215,7 @@ public class FaradayTutorialManager : MonoBehaviour
         // Move Camera Back to Main Position
         MainCamera.transform.position = mainPosition;
         MainCamera.orthographicSize = 10;
+        isZoom = false;
     }
 
     IEnumerator Panel5BlinkAnim()
