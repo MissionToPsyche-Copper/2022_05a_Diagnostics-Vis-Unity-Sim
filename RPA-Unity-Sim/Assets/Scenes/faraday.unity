@@ -2732,10 +2732,10 @@ MonoBehaviour:
   FaradayOutline: {fileID: 25187067}
   TutorialPanel4: {fileID: 2042768274}
   runPanel4Blink: 0
-  Collector: {fileID: 0}
+  Collector: {fileID: 1088773968}
   TutorialPanel5: {fileID: 718221534}
   runPanel5Blink: 0
-  Bolt: {fileID: 0}
+  Bolt: {fileID: 1038570781}
 --- !u!1 &550625316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,6 +4764,7 @@ GameObject:
   - component: {fileID: 1038570776}
   - component: {fileID: 1038570780}
   - component: {fileID: 1038570779}
+  - component: {fileID: 1038570781}
   m_Layer: 0
   m_Name: StainlessSteelBolt
   m_TagString: Stainless Steel Bolt
@@ -4874,6 +4875,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 85940516}
+--- !u!114 &1038570781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038570774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7482ad3ae264e8441ae711c8a67d57c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1080889457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,6 +4945,7 @@ GameObject:
   - component: {fileID: 1088773963}
   - component: {fileID: 1088773967}
   - component: {fileID: 1088773966}
+  - component: {fileID: 1088773968}
   m_Layer: 22
   m_Name: Collector
   m_TagString: Collector
@@ -5041,6 +5055,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 85940516}
+--- !u!114 &1088773968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088773961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7482ad3ae264e8441ae711c8a67d57c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098746160
 GameObject:
   m_ObjectHideFlags: 0

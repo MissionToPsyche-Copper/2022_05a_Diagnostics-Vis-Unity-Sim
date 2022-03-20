@@ -52,7 +52,7 @@ public class FaradayTutorialManager : MonoBehaviour
         zoomButton.interactable = false;
 
         mainPosition = MainCamera.transform.position;
-        zoomPosition = new Vector3(1.5f, 0, -10f); // get this to follow the Faraday Probe?
+        zoomPosition = new Vector3(1.5f, 0, -10f); // get this to follow the Faraday Probe???
     }
 
     // Update is called once per frame
