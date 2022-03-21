@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2287,8 +2287,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The second grid on the device is the Electron Repulsion Grid. It's purpose
-    to to repell electrons out of the device.
+  m_Text: The second grid on the device is the Electron Repulsion Grid. Its purpose
+    to repel electrons out of the device.
 --- !u!222 &320617006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3537,7 +3537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb473f22b3bf4d54bb14c203476fae00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCameraPosition: {x: 0, y: 0, z: 0}
+  MainCameraPosition: {x: 1.5, y: 0, z: -10}
   defaultZoomHeight: 10
   main: {fileID: 963194227}
   zoomButton: {fileID: 2125227334}
@@ -6210,7 +6210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the first grid in the RPA device. It's purpose is to allow only
+  m_Text: This is the first grid in the RPA device. Its purpose is to allow only
     electrons and Xenon ions into the device.
 --- !u!222 &1123131437
 CanvasRenderer:
@@ -11226,8 +11226,8 @@ MonoBehaviour:
     these ions contain.
 
 
-    Inside this device, there are four grids and a ion
-    collector at the end of the chamer. Each grid has a different purpose.'
+    Inside this device, there are four grids and an ion
+    collector at the end of the chamber. Each grid has a different purpose.'
 --- !u!222 &2094409333
 CanvasRenderer:
   m_ObjectHideFlags: 0
