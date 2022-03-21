@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FaradayTutorialManager : MonoBehaviour
 {
-    private bool isZoom = false;
+    private bool zoom = false;
 
     public PausePlay PausePlayController;
     public Camera MainCamera;
@@ -94,6 +94,13 @@ public class FaradayTutorialManager : MonoBehaviour
                 timer = Time.realtimeSinceStartup + 0.5f;
             }
         }
+
+        // This is basically taken from the CameraZoom.cs class
+        if (zoom)
+		{
+            Vector3 pos = MainCamera.transform.position;
+            MainCamera.transform.Translate(FaradayOutline.transform.position - new Vector3(pos.x, pos.y, 0));
+		}
     }
 
     public void DisableTutorialLocks()
@@ -181,7 +188,7 @@ public class FaradayTutorialManager : MonoBehaviour
         // Move Camera to Faraday Probe
         MainCamera.transform.position = zoomPosition;
         MainCamera.orthographicSize = 3;
-        isZoom = true;
+        zoom = true;
     }
 
     // Fourth Tutorial Panel
@@ -215,7 +222,7 @@ public class FaradayTutorialManager : MonoBehaviour
         // Move Camera Back to Main Position
         MainCamera.transform.position = mainPosition;
         MainCamera.orthographicSize = 10;
-        isZoom = false;
+        zoom = false;
     }
 
     IEnumerator Panel5BlinkAnim()
