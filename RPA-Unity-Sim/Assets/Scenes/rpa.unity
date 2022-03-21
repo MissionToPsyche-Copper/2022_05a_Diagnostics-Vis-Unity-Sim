@@ -3006,12 +3006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3537,10 +3537,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb473f22b3bf4d54bb14c203476fae00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCameraPosition: {x: 0, y: 0, z: 0}
+  defaultZoomHeight: 10
   main: {fileID: 963194227}
   zoomButton: {fileID: 2125227334}
   diagnostic: {fileID: 1758730642}
-  defaultZoomHeight: 10
 --- !u!114 &482212015
 MonoBehaviour:
   m_ObjectHideFlags: 0
