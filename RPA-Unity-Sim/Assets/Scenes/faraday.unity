@@ -2717,9 +2717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePlayController: {fileID: 0}
-  MainCamera: {fileID: 0}
-  pauseButton: {fileID: 0}
-  zoomButton: {fileID: 0}
+  MainCamera: {fileID: 963194227}
+  pauseButton: {fileID: 836688566}
+  zoomButton: {fileID: 1521090800}
   timer: 0
   mainPosition: {x: 0, y: 0, z: 0}
   zoomPosition: {x: 0, y: 0, z: 0}
