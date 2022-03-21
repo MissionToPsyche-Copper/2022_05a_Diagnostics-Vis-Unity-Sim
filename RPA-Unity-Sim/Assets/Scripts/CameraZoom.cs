@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class CameraZoom : MonoBehaviour
 {
+    public Vector3 MainCameraPosition;
+    public float defaultZoomHeight = 10;
+
     private bool zoom = false;
     [SerializeField] private Camera main;
     [SerializeField] private Text zoomButton;
     [SerializeField] private GameObject diagnostic;
-    [SerializeField] private float defaultZoomHeight = 10;
     public void Zoom()
     {
         if(zoom) // zoomed in, so un zoom
         {
-            main.transform.position = new Vector3(1.5f, 0, -10f);
+            main.transform.position = MainCameraPosition;
             main.orthographicSize = defaultZoomHeight;
             zoom = false;
             zoomButton.text = "Focus on Device";

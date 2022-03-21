@@ -99,7 +99,7 @@ public class FaradayTutorialManager : MonoBehaviour
         if (zoom)
 		{
             Vector3 pos = MainCamera.transform.position;
-            MainCamera.transform.Translate(FaradayOutline.transform.position - new Vector3(pos.x, pos.y, 0));
+            MainCamera.transform.Translate(FaradayOutline.transform.position - new Vector3(pos.x + 2f, pos.y, 0));
 		}
     }
 
@@ -183,7 +183,7 @@ public class FaradayTutorialManager : MonoBehaviour
 
         // enable time
         PausePlayController.ToggleSimulationPlay();
-        Time.timeScale = 0.75f;
+        Time.timeScale = 1f;
 
         // Move Camera to Faraday Probe
         MainCamera.transform.position = zoomPosition;
@@ -221,7 +221,7 @@ public class FaradayTutorialManager : MonoBehaviour
 
         // Move Camera Back to Main Position
         MainCamera.transform.position = mainPosition;
-        MainCamera.orthographicSize = 10;
+        MainCamera.orthographicSize = 15;
         zoom = false;
     }
 
