@@ -33,16 +33,6 @@ public class FaradayTutorialManager : MonoBehaviour
     public bool runPanel3Blink = false;
     public MultipleElementHighlight FaradayOutline;
 
-    [Header("Panel 4")]
-    public GameObject TutorialPanel4;
-    public bool runPanel4Blink = false;
-    public ElementHighlight Collector;
-
-    [Header("Panel 5")]
-    public GameObject TutorialPanel5;
-    public bool runPanel5Blink = false;
-    public ElementHighlight Bolt;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -73,24 +63,6 @@ public class FaradayTutorialManager : MonoBehaviour
             if (timer < Time.realtimeSinceStartup)
             {
                 StartCoroutine(Panel3BlinkAnim());
-                timer = Time.realtimeSinceStartup + 0.5f;
-            }
-        }
-
-        if (runPanel4Blink)
-        {
-            if (timer < Time.realtimeSinceStartup)
-            {
-                StartCoroutine(Panel4BlinkAnim());
-                timer = Time.realtimeSinceStartup + 0.5f;
-            }
-        }
-
-        if (runPanel5Blink)
-        {
-            if (timer < Time.realtimeSinceStartup)
-            {
-                StartCoroutine(Panel5BlinkAnim());
                 timer = Time.realtimeSinceStartup + 0.5f;
             }
         }
@@ -149,6 +121,15 @@ public class FaradayTutorialManager : MonoBehaviour
         // enable 3
         TutorialPanel3.SetActive(true);
         runPanel3Blink = true;
+
+        // enable time
+        PausePlayController.ToggleSimulationPlay();
+        Time.timeScale = 1f;
+
+        // Move Camera to Faraday Probe
+        MainCamera.transform.position = zoomPosition;
+        MainCamera.orthographicSize = 3;
+        zoom = true;
     }
 
     // Third Tutorial Panel
@@ -161,6 +142,15 @@ public class FaradayTutorialManager : MonoBehaviour
         // enable 2
         TutorialPanel2.SetActive(true);
         runPanel2Blink = true;
+
+        // enable time
+        PausePlayController.ToggleSimulationPlay();
+        Time.timeScale = 0f;
+
+        // Move Camera Back to Main Position
+        MainCamera.transform.position = mainPosition;
+        MainCamera.orthographicSize = 15;
+        zoom = false;
     }
 
     IEnumerator Panel3BlinkAnim()
@@ -177,69 +167,11 @@ public class FaradayTutorialManager : MonoBehaviour
         TutorialPanel3.SetActive(false);
         runPanel3Blink = false;
 
-        // enable 4
-        TutorialPanel4.SetActive(true);
-        runPanel4Blink = true;
-
-        // enable time
-        PausePlayController.ToggleSimulationPlay();
-        Time.timeScale = 1f;
-
-        // Move Camera to Faraday Probe
-        MainCamera.transform.position = zoomPosition;
-        MainCamera.orthographicSize = 3;
-        zoom = true;
-    }
-
-    // Fourth Tutorial Panel
-    public void ContinueFourthPanel()
-    {
-        // disable 4
-        runPanel4Blink = false;
-        TutorialPanel4.SetActive(false);
-
-        // enable 5
-        runPanel5Blink = true;
-        TutorialPanel5.SetActive(true);
-    }
-
-    IEnumerator Panel4BlinkAnim()
-    {
-        Collector.EnableOutline();
-        yield return new WaitForSecondsRealtime(0.25f);
-        Collector.DisableOutline();
-    }
-
-    // Fifth Tutorial Panel
-    public void ContinueFifthPanel()
-    {
-        // disable 5
-        runPanel5Blink = false;
-        TutorialPanel5.SetActive(false);
-
         DisableTutorialLocks();
 
         // Move Camera Back to Main Position
         MainCamera.transform.position = mainPosition;
         MainCamera.orthographicSize = 15;
         zoom = false;
-    }
-
-    IEnumerator Panel5BlinkAnim()
-    {
-        Bolt.EnableOutline();
-        yield return new WaitForSecondsRealtime(0.25f);
-        Bolt.DisableOutline();
-    }
-
-    public void BackFifthPanel()
-    {
-        // disable 5
-        runPanel5Blink = false;
-        TutorialPanel5.SetActive(false);
-
-        // enable 4
-        TutorialPanel4.SetActive(true);
-        runPanel4Blink = true;
     }
 }
