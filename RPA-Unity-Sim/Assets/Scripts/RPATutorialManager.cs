@@ -7,6 +7,7 @@ public class RPATutorialManager : MonoBehaviour
 {
     public PausePlay PausePlayController;
     public Camera MainCamera;
+    public TimeManager timeManager;
     // UI interactables
     public Button pauseButton;
     public Button zoomButton;
@@ -64,6 +65,8 @@ public class RPATutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeManager = this.gameObject.GetComponent<TimeManager>();
+
         PausePlayController = this.gameObject.GetComponent<PausePlay>();
         PausePlayController.ToggleSimulationPlay();
         pauseButton.interactable = false;
@@ -151,6 +154,7 @@ public class RPATutorialManager : MonoBehaviour
         TutorialPanel1.SetActive(false);
 
         PausePlayController.ToggleSimulationPlay();
+        timeManager.UpdateTimeFromValue(1);
         DisableTutorialLocks();
     }
 
@@ -212,7 +216,6 @@ public class RPATutorialManager : MonoBehaviour
 
         // enable time
         PausePlayController.ToggleSimulationPlay();
-        Time.timeScale = 0.75f;
 
         // Move Camera to RPA
         MainCamera.transform.position = zoomPosition;

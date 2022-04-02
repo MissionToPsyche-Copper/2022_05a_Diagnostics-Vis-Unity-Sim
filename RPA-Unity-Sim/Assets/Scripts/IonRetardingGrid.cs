@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IonRetardingGrid : MonoBehaviour
 {
-    public float IRGVoltage = 1;
+    private float IRGVoltage = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +18,19 @@ public class IonRetardingGrid : MonoBehaviour
         
     }
 
-    void UpdateVoltage(float newVoltage)
+    public void UpdateVoltage(float newVoltage)
     {
-        this.IRGVoltage = newVoltage;
+        this.IRGVoltage = newVoltage / 100;
+        //Debug.Log("Voltage = " + IRGVoltage);
     }
 
     public bool PassCheck(float ionCharge, float ionMass, float elementalCharge, float ionVelocity)
     {
         //Debug.Log("Charge: " + ionCharge + " | Mass: " + ionMass + " | Elemental Charge: " + elementalCharge + " | Voltage: " + this.IRGVoltage);
         //Debug.Log((Mathf.Sqrt((2 * ionCharge * elementalCharge * IRGVoltage) / (ionMass))));
-        float criticalvelocity = Mathf.Sqrt((2 * ionCharge * elementalCharge * IRGVoltage) /(ionMass));
+
+        //float criticalvelocity = Mathf.Sqrt((2 * ionCharge * elementalCharge * IRGVoltage) /(ionMass));
+        float criticalvelocity = IRGVoltage; // debug
 
 
         //Debug.Log("Crit: " + criticalvelocity + " | Ion Vel: " + ionVelocity);

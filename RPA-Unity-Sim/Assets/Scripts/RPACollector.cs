@@ -27,7 +27,7 @@ public class RPACollector : MonoBehaviour
         {
             int randomSpawnLocation = Random.Range(0, 3);
             Instantiate(RepelledElectronPrefab, RepelledElectronSpawns[randomSpawnLocation].transform.position, Quaternion.Euler(Vector3.zero));
-            Debug.Log("Repelled an Electron");
+            //Debug.Log("Repelled an Electron");
         }
     }
 }

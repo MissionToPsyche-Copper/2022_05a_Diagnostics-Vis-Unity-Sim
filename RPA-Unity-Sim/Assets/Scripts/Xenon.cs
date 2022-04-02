@@ -73,7 +73,7 @@ public class Xenon : MonoBehaviour
             }
             else
             {
-                //Debug.Log("Failed check");
+                //Debug.LogError("Failed check");
             }
             Destroy(this.gameObject, 3f);
         }
@@ -113,7 +113,7 @@ public class Xenon : MonoBehaviour
             // Charge Xenon, get velocity for critical check in device
             isCharged = true;
             ionCharge = 1;
-            velocity = Random.Range(0f, 1.5f);
+            velocity = Random.Range(0.0115f, 0.99999f);
 
             // Change Type
             this.gameObject.layer = 9;
