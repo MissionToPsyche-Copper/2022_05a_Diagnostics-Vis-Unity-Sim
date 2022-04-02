@@ -33,6 +33,15 @@ public class FaradayTutorialManager : MonoBehaviour
     public bool runPanel3Blink = false;
     public MultipleElementHighlight FaradayOutline;
 
+    [Header("Panel 4")]
+    public GameObject TutorialPanel4;
+    public bool runPanel4Blink = false;
+
+    [Header("Panel 5")]
+    public GameObject TutorialPanel5;
+    public bool runPanel5Blink = false;
+    public MultipleElementHighlight CollectorOutline;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +72,15 @@ public class FaradayTutorialManager : MonoBehaviour
             if (timer < Time.realtimeSinceStartup)
             {
                 StartCoroutine(Panel3BlinkAnim());
+                timer = Time.realtimeSinceStartup + 0.5f;
+            }
+        }
+
+        if (runPanel4Blink)
+        {
+            if (timer < Time.realtimeSinceStartup)
+            {
+                StartCoroutine(Panel4BlinkAnim());
                 timer = Time.realtimeSinceStartup + 0.5f;
             }
         }
@@ -166,6 +184,68 @@ public class FaradayTutorialManager : MonoBehaviour
         // disable 3
         TutorialPanel3.SetActive(false);
         runPanel3Blink = false;
+
+        // enable 4
+        TutorialPanel4.SetActive(true);
+        runPanel4Blink = true;
+    }
+
+    // Third Tutorial Panel
+    public void BackFourthPanel()
+    {
+        // disable 4
+        TutorialPanel4.SetActive(false);
+        runPanel4Blink = false;
+
+        // enable 3
+        TutorialPanel3.SetActive(true);
+        runPanel3Blink = true;
+    }
+
+    IEnumerator Panel4BlinkAnim()
+    {
+        FaradayOutline.EnableAll();
+        yield return new WaitForSecondsRealtime(0.25f);
+        FaradayOutline.DisableAll();
+    }
+
+    // Transition to RPA Zoom with 4th Panel
+    public void ContinueFourthPanel()
+    {
+        // disable 4
+        TutorialPanel4.SetActive(false);
+        runPanel3Blink = false;
+
+        // enable 5
+        TutorialPanel5.SetActive(true);
+        runPanel4Blink = true;
+    }
+
+    // Third Tutorial Panel
+    public void BackFifthPanel()
+    {
+        // disable 5
+        TutorialPanel5.SetActive(false);
+        runPanel4Blink = false;
+
+        // enable 4
+        TutorialPanel4.SetActive(true);
+        runPanel3Blink = true;
+    }
+
+    IEnumerator Panel5BlinkAnim()
+    {
+        CollectorOutline.EnableAll();
+        yield return new WaitForSecondsRealtime(0.25f);
+        CollectorOutline.DisableAll();
+    }
+
+    // Transition to RPA Zoom with 4th Panel
+    public void ContinueFifthPanel()
+    {
+        // disable 5
+        TutorialPanel5.SetActive(false);
+        runPanel5Blink = false;
 
         DisableTutorialLocks();
 

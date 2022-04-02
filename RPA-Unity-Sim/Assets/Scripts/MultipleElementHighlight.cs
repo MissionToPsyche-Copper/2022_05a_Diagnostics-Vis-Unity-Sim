@@ -13,7 +13,7 @@ public class MultipleElementHighlight : MonoBehaviour
     void Awake()
     {
         siblings = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-        meshRenderer = this.GetComponent<MeshRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
         StartingColor = meshRenderer.material.color;
     }
 
