@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2324,8 +2324,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325896502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2554, y: 0, z: 0}
-  m_LocalScale: {x: 0.25410092, y: 1.5, z: 1}
+  m_LocalPosition: {x: 2.2835, y: 0, z: 0}
+  m_LocalScale: {x: 0.19786838, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 275825058}
   m_RootOrder: 15
@@ -2342,7 +2342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba79985bd931364db703ed098468981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IRGVoltage: 1
 --- !u!65 &325896507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2570,10 +2569,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1400762019}
   m_HandleRect: {fileID: 808762895}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 5
+  m_MinValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3571,9 +3570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridVoltageText: {fileID: 945535384}
-  VoltageString: 'Grid Voltage: 1'
+  VoltageString: 'Grid Voltage: 50%'
   VoltageSlider: {fileID: 351423549}
-  voltage: 1
+  voltage: 50
   IRG: {fileID: 1382611688}
 --- !u!114 &482212017
 MonoBehaviour:
@@ -3589,6 +3588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausePlayController: {fileID: 482212012}
   MainCamera: {fileID: 963194227}
+  timeManager: {fileID: 0}
   pauseButton: {fileID: 836688566}
   zoomButton: {fileID: 1762938207}
   timer: 0
@@ -5209,7 +5209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Grid Voltage: 1'
+  m_Text: 'Grid Voltage: 50%'
 --- !u!222 &945535385
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6210,8 +6210,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the first grid in the RPA device. Its purpose is to allow only
-    electrons and Xenon ions into the device.
+  m_Text: This is the first grid in the RPA device. Its purpose is to allow electrons
+    and Xenon ions into the device.
 --- !u!222 &1123131437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7554,7 +7554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba79985bd931364db703ed098468981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IRGVoltage: 1
 --- !u!1 &1400762018
 GameObject:
   m_ObjectHideFlags: 0
