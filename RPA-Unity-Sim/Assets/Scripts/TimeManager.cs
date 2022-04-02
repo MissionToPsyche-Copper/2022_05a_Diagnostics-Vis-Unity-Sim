@@ -33,4 +33,15 @@ public class TimeManager : MonoBehaviour
         timeSpeed = TimeSlider.value;
         Time.timeScale = timeSpeed;
     }
+
+    public void UpdateTimeFromValue(float newTimeSpeed)
+    {
+        timeSpeed = newTimeSpeed;
+
+        SpeedText = timeSpeed + "x Speed";
+        SliderText.text = SpeedText;
+
+        TimeSlider.value = timeSpeed;
+        Time.timeScale = timeSpeed;
+    }
 }
