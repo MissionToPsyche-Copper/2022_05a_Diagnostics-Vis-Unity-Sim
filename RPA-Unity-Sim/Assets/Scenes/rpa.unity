@@ -3466,7 +3466,7 @@ MonoBehaviour:
 
     When a Xenon ion interacts with an electron, an electron is removed
     from the Xenon ion and both elements are shot away from the thruster, generating
-    propulsion.'
+    thrust.'
 --- !u!222 &459397199
 CanvasRenderer:
   m_ObjectHideFlags: 0
