@@ -85,6 +85,15 @@ public class FaradayTutorialManager : MonoBehaviour
             }
         }
 
+        if (runPanel5Blink)
+        {
+            if (timer < Time.realtimeSinceStartup)
+            {
+                StartCoroutine(Panel5BlinkAnim());
+                timer = Time.realtimeSinceStartup + 0.5f;
+            }
+        }
+
         // This is basically taken from the CameraZoom.cs class
         if (zoom)
 		{
@@ -214,11 +223,11 @@ public class FaradayTutorialManager : MonoBehaviour
     {
         // disable 4
         TutorialPanel4.SetActive(false);
-        runPanel3Blink = false;
+        runPanel4Blink = false;
 
         // enable 5
         TutorialPanel5.SetActive(true);
-        runPanel4Blink = true;
+        runPanel5Blink = true;
     }
 
     // Third Tutorial Panel
