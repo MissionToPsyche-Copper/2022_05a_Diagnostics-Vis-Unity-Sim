@@ -3607,7 +3607,7 @@ GameObject:
   - component: {fileID: 651101118}
   m_Layer: 10
   m_Name: NorthMagnet2
-  m_TagString: North Magnet
+  m_TagString: Magnets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 734946440}
   m_Layer: 10
   m_Name: SouthMagnet1
-  m_TagString: South Magnet
+  m_TagString: Magnets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7434,7 +7434,7 @@ GameObject:
   - component: {fileID: 1582628308}
   m_Layer: 10
   m_Name: SouthMagnet2
-  m_TagString: South Magnet
+  m_TagString: Magnets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9591,7 +9591,7 @@ GameObject:
   - component: {fileID: 2116447399}
   m_Layer: 10
   m_Name: NorthMagnet1
-  m_TagString: North Magnet
+  m_TagString: Magnets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
