@@ -98,7 +98,7 @@ public class FaradayTutorialManager : MonoBehaviour
         if (zoom)
 		{
             Vector3 pos = MainCamera.transform.position;
-            MainCamera.transform.Translate(FaradayOutline.transform.position - new Vector3(pos.x + 2f, pos.y, 0));
+            MainCamera.transform.Translate(FaradayOutline.transform.position - new Vector3(pos.x + 2.5f, pos.y, 0));
 		}
     }
 
