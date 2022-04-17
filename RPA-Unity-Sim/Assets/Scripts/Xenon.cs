@@ -117,7 +117,7 @@ public class Xenon : MonoBehaviour
 
             // Change Type
             this.gameObject.layer = 9;
-            this.gameObject.tag = "ChargedXenon";
+            this.gameObject.tag = "Charged Xenon";
 
             this.GetComponent<MultipleElementHighlight>().UpdateColor();
 

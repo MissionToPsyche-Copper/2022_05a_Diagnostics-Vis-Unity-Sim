@@ -1617,7 +1617,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -140, y: -35}
-  m_SizeDelta: {x: 260, y: 326}
+  m_SizeDelta: {x: 260, y: 350}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &289169388
 GameObject:
@@ -1733,7 +1733,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 8, y: -52}
-  m_SizeDelta: {x: 244, y: 230}
+  m_SizeDelta: {x: 244, y: 245}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &303415975
 MonoBehaviour:
@@ -1773,8 +1773,8 @@ MonoBehaviour:
 
     It is
     electrically isolated from the collector by a small gap. It is biased the same
-    as the collector in order to prevent an artificial increase in the surface area
-    of the collector, which would increase the measured ion current density.'
+    as the collector to prevent an artificial increase in the surface area of the
+    collector, which would increase the measured ion current density.'
 --- !u!222 &303415976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7780,13 +7780,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The Faraday Probe measures the ion current density distribution or the
+  m_Text: 'The Faraday Probe measures the ion current density distribution, or the
     number of ions that are in a specific location.
 
 
     The Faraday Probe consists
-    of a metal cylinder called the guard that contains the collector which is a flat
-    metal disk.'
+    of a metal cylinder, or guard, that contains the collector, which is a flat metal
+    disk.'
 --- !u!222 &1689171937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8855,9 +8855,9 @@ MonoBehaviour:
 
 
     It is made
-    of aluminum but is coated in tungsten in order to reduce the impacts of secondary
-    electron emission (SEE). This occurs when an ion hits the collector and causes
-    an electron to come off the collector.'
+    of aluminum but is coated in tungsten to reduce the impacts of secondary electron
+    emission (SEE). SEE occurs when an ion hits the collector and causes an electron
+    to come off the collector.'
 --- !u!222 &1879224587
 CanvasRenderer:
   m_ObjectHideFlags: 0

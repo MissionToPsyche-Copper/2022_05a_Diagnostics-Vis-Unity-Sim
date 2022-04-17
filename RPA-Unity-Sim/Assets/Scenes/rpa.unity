@@ -4593,10 +4593,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "The Ion Collector sits the farthest back in the device. This captures
-    ion and provides researchers with information about their energy. \n\nWhen an
-    Ion is collected, there is a chance of an electron breaking free. The Electron
-    Suppression Grid is used to send electrons back to the collector so data is not
-    skewed by their loss."
+    ions and provides researchers with information about ion energy. \n\nWhen an
+    ion is collected, there is a chance of an electron breaking free. The Electron
+    Suppression Grid sends electrons back to the collector so data is not skewed
+    by the loss of electrons."
 --- !u!222 &792756480
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8760,8 +8760,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'The Ion Retarding Grid is used to measure the critical velocity of Xenon
-    Ions. Changing the voltage of this grid changes the velocity needed for an ion
-    to pass through it.
+    Ions. Changing the voltage of this grid changes the velocity an ion needs to
+    pass through it.
 
 
     You can use the Voltage Slider below to simulate this
