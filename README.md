@@ -1,4 +1,4 @@
-# 2022_05a_Visualizations-Unity-Sim
+# 2022_05a_Diagnostics-Vis-Unity-Sim
 
 This project can only be opened in Unity. To rebuild the project in different executables
 
